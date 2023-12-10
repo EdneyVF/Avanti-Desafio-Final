@@ -18,7 +18,6 @@ function InicialPage() {
 
       <InicialPageRowOne />
       <InicialPageRowTwo />
-      <InicialPageRowOne />
       </div> 
       
       

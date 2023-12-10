@@ -16,8 +16,8 @@ function InicialPageBar() {
         </div>
         
         <div className='groupbar'>
-        <span className='text3bar'>Explorar Eventos</span>
-        <span className='text4bar'>Crie seu Evento</span>
+        <Link to='/events'><span className='text3bar'>Explorar Eventos</span></Link>
+        <Link to='/auth-admin'><span className='text4bar'>Crie seu Evento</span></Link>
         </div>
     </div>
       
