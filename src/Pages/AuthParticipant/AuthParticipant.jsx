@@ -1,10 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import * as Components from "../../Components/LoginComponents/Components"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as Components from "../../Components/LoginComponents/Components";
 import BackgroundVideo from "../../Components/LoginComponents/BackgroundVideo";
+import ServiceAuth from "../../service/ServiceAuth";
 import './styles.css';
 
 function AuthParticipant() {
   const [signIn, toggle] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const token = await ServiceAuth.login(email, password);
+      localStorage.setItem('token', token); // Armazenar o token no localStorage
+      navigate('/'); // Tentantiva de redirecionar para a página inicial
+    } catch (error) {
+      console.error('Erro no login:', error);
+    }
+  };
+
+  const handleSignup = async () => {
+    try {
+      await ServiceAuth.signup(email, password);
+    } catch (error) {
+      console.error('Erro no registro:', error);
+    }
+  };
 
   return (
     <>
@@ -13,18 +36,17 @@ function AuthParticipant() {
       <Components.SignUpContainer signingIn={signIn}>
         <Components.Form>
           <Components.Title>Criar Conta</Components.Title>
-          <Components.Input type="text" placeholder="Nome" />
-          <Components.Input type="email" placeholder="Email" />
-          <Components.Input type="password" placeholder="Senha" />
-          <Components.Button>Registrar</Components.Button>
+          <Components.Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Components.Input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Components.Button onClick={handleSignup}>Registrar</Components.Button>
         </Components.Form>
       </Components.SignUpContainer>
       <Components.SignInContainer signingIn={signIn}>
         <Components.Form>
           <Components.Title>Fazer Login</Components.Title>
-          <Components.Input type="email" placeholder="Email" />
-          <Components.Input type="password" placeholder="Senha" />
-          <Components.Button>Entrar</Components.Button>
+          <Components.Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Components.Input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Components.Button onClick={handleLogin}>Entrar</Components.Button>
         </Components.Form>
       </Components.SignInContainer>
       <Components.OverlayContainer signingIn={signIn}>
