@@ -1,6 +1,7 @@
 
 import './bar.css'
 import Logo from '../../../assets/logo.svg'
+import { Link } from "react-router-dom"
 
 function InicialPageBar() {
  
