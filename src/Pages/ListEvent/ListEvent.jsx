@@ -31,7 +31,7 @@ const EventPage = () => {
         {/* <option value="date">Data</option> */}
         <option value="category">Categoria</option>
       </select>
-      <input type="text" placeholder={`Filter by ${filterType}`} onChange={handleFilterChange} />
+      <input type="text" placeholder={`Pesquise por ${filterType}`} onChange={handleFilterChange} />
 
       {events.map((event) => (
         <div key={event.id}>
