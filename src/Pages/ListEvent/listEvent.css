@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Poppins:wght@400;500;600&display=swap');
+
 body {
     background-color: #2D1B33;
     padding: 30px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #2D1B33;
     background-image: url('./imgs/Tela_de_Eventos.svg');
     background-position: center;
     background-size: 100%;
-
 }
 
 .event-filter {

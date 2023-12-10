@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchFilteredEvents } from './../../service/ApiService';
+import Header from '../../Components/Header/Header';
 import './listEvent.css';
 
 const EventPage = () => {
@@ -25,7 +26,9 @@ const EventPage = () => {
   };
 
   return (
-    <div className='search-page'>
+    <>
+      <Header/>
+      <div className='search-page'>
       <div className='event-filter'>
         <h3>Digite {filterType === "event" ? "o nome do evento" : filterType === "category" ? "a categoria do evento" : filterType === "local" ? "o local do evento" : filterType === "data" ? "a data do evento" : ""} que deseja buscar</h3>
         <select onChange={handleFilterTypeChange}>
@@ -40,7 +43,7 @@ const EventPage = () => {
       <div className='event-list'>
         {events.map((event) => (
           <div className='event' key={event.id}>
-            <img className='img-event' src="src\Pages\ListEvent\evento.png" alt="imagem-evento" />
+            <img className='img-event' src="src\Pages\ListEvent\imgs\evento.png" alt="imagem-evento" />
             <div className='event-details'>
               <h2>{event.name}</h2>
               <p>Data do evento: {new Date(event.date).toLocaleDateString('pt-BR')}</p>
@@ -51,6 +54,8 @@ const EventPage = () => {
         ))}
       </div>
     </div>
+    </>
+    
   );
 };
 
