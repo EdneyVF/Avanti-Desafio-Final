@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+  .main-containerbar {
+    width: 100vw;
+    height: 68px;
+    background-color: #EE887A;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logobar {
+    
+    width: 50px;
+    height: 50px;
+
+    
+  }
+  .boxbar {
+    width: 81px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .textbar {
+    color:  #000000;
+    font-size: 22px;
+  }
+  .text2bar {
+    
+    color: #2d1b33;
+    font-size: 22px;
+    flex-direction: row;
+
+  }
+  .text3bar {
+   
+    width: 183px;
+    height: 27px;
+    color: #2d1b33;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.625px;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: 20px ;
+  }
+  .groupbar {
+    width: 169px;
+    height: 27px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.625px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    
+
+  }
+  .text4bar {
+
+    color: #2d1b33;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.625px;
+  }
+  
