@@ -1,0 +1,56 @@
+body {
+    background-color: #2D1B33;
+    padding: 30px;
+    font-family: Inter;
+    color: #2D1B33;
+    background-image: url('./imgs/Tela_de_Eventos.svg');
+    background-position: center;
+    background-size: 100%;
+
+}
+
+.event-filter {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #D4C0DB;
+}
+
+.event-filter input {
+    max-width: 600px;
+    font-size: 18.72px;
+    height: auto;
+    border-radius: 5px;
+}
+.event-filter select {
+    max-width: 600px;
+    height: auto;
+    font-size: 18.72px;
+    border-radius: 5px;
+}
+
+.event {
+    display: flex;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #9ABC8A;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.img-event {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.event-details h2 {
+    margin-bottom: 45px;
+}
+
+.event-details p {
+    color: #5B5B5B;
+    display: flex;
+    flex-direction: column;
+}
