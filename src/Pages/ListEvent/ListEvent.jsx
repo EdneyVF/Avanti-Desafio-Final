@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchFilteredEvents } from './../../service/ApiService';
 import Header from '../../Components/Header/Header';
 import './listEvent.css';
+import Modal from '../../Components/Modal/modal'
 
 const EventPage = () => {
   const [events, setEvents] = useState([]);
@@ -25,6 +26,8 @@ const EventPage = () => {
     setFilterType(event.target.value);
   };
 
+  const [openModal, setOpenModal] = useState(false)
+
   return (
     <>
       <Header/>
@@ -47,7 +50,7 @@ const EventPage = () => {
 
       <div className='event-list'>
         {events.map((event) => (
-          <div className='event' key={event.id}>
+          <div className='event' key={event.id} onClick={() => setOpenModal(true)}>
             <img className='img-event' src="src\Pages\ListEvent\imgs\evento.png" alt="imagem-evento" />
             <div className='event-details'>
               <h2>{event.name}</h2>
@@ -55,6 +58,8 @@ const EventPage = () => {
               <p>Local: {event.location ? event.location.name : 'Local não disponível'}</p>
               <p>Categoria: {event.category ? event.category.name : 'Categoria não disponível'}</p>
             </div>
+            <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
+            </Modal>
           </div>
         ))}
       </div>
