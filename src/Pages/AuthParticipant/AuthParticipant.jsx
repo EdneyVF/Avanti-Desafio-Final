@@ -23,7 +23,7 @@ function AuthParticipant() {
     try {
       const token = await ServiceAuth.login(email, password);
       localStorage.setItem('token', token); // Armazenar o token no localStorage
-      navigate('/'); // Tentantiva de redirecionar para a página inicial
+      navigate('/inicio'); // Tentantiva de redirecionar para a página inicial
     } catch (error) {
       console.error('Erro no login:', error);
     }

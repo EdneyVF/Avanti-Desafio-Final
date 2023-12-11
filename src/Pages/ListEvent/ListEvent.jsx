@@ -18,6 +18,14 @@ const EventPage = () => {
     fetchFiltered();
   }, [filter]);
 
+  useEffect(() => {
+    document.body.classList.add('ListEvent');
+  
+    return function cleanup() {
+      document.body.classList.remove('ListEvent');
+    };
+  }, []);
+
   const handleFilterChange = (event) => {
     setFilter({ ...filter, [filterType]: event.target.value });
   };

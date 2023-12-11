@@ -1,0 +1,23 @@
+    .tela{
+        
+        height: 100vh;
+        background-color: #2D1B33;
+        width: 100vw;
+        display:  flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 ;
+        padding: 0 ;
+    }
+
+    .titulo{
+        margin-top: 150px;
+        margin-bottom: 20px;
+        font-size: 51;
+        color: #F36A71;
+    }
+
+    .titulo span {
+        color: #9ABC8A;
+    }

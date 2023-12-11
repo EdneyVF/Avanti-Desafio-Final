@@ -1,11 +1,10 @@
-
+import React, { useEffect, useState } from 'react';
 import InicialPageBar from '../../Components/InicialPageComponents/Bar/Bar.jsx'
 import InicialPageRowOne from '../../Components/InicialPageComponents/Row1/Row.jsx'
 import InicialPageRowTwo from '../../Components/InicialPageComponents/Row2/Row.jsx'
-import './page.css'
+import "./Styles.css"
 
 function InitialPage() {
-  
 
   return (
     <> 
