@@ -37,7 +37,12 @@ const EventPage = () => {
           {/* <option value="date">Data</option> */}
           <option value="category">Categoria</option>
         </select>
-        <input type="text" placeholder={`Pesquise por ${filterType === "event" ? "nome" : filterType === "category" ? "categoria" : filterType === "local" ? "local" : filterType === "data" ? "a data do evento" : ""}`} onChange={handleFilterChange} />
+        <div className='search-div'>
+          <input type="text" placeholder={`Pesquise por ${filterType === "event" ? "Nome" : filterType === "category" ? "Categoria" : filterType === "local" ? "Local" : filterType === "Data" ? "a data do evento" : ""}`} onChange={handleFilterChange} />
+          <div className='div-search-icon'>
+          <a href="#"><img className='search-icon' src="src\Pages\ListEvent\imgs\search-icon.svg" alt="" /></a>
+          </div>
+        </div>
       </div>
 
       <div className='event-list'>
