@@ -4,12 +4,12 @@ import InicialPageRowOne from '../../Components/InicialPageComponents/Row1/Row.j
 import InicialPageRowTwo from '../../Components/InicialPageComponents/Row2/Row.jsx'
 import './page.css'
 
-function InicialPage() {
+function InitialPage() {
   
 
   return (
     <> 
-      <InicialPageBar/>  
+    <InicialPageBar />
      <div className='tela'>
 
      <div className='titulo' >
@@ -19,9 +19,7 @@ function InicialPage() {
       <InicialPageRowOne />
       <InicialPageRowTwo />
       </div> 
-      
-      
-     
+    
       
      </>
       
@@ -29,4 +27,4 @@ function InicialPage() {
   )
 }
 
-export default InicialPage
+export default InitialPage
