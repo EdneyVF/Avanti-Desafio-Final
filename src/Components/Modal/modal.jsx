@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { fetchFilteredEvents } from './../../service/ApiService';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark, faClock, faMusic, faThumbTack  } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark, faClock, faMusic, faThumbTack  } from '@fortawesome/free-solid-svg-icons';
 
 const BACKGROUND_STYLE = {
     position: 'fixed',
@@ -69,7 +69,7 @@ const ICON_STYLE = {
     fontSize: '16pt',
 }
 
-export default function Modal({isOpen, children, setModalOpen}) {
+export default function Modal({ isOpen, children, setModalOpen }) {
     
     const [events, setEvents] = useState([]);
     const [filter, setFilter] = useState({});
@@ -92,22 +92,26 @@ export default function Modal({isOpen, children, setModalOpen}) {
         setFilterType(event.target.value);
     };
 
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
     if (isOpen) {
         return (
             <div>
-                {events.map((event) => (   
-                <div style={BACKGROUND_STYLE}>
+                {events.map((event) => (
+                    <div style={BACKGROUND_STYLE} key={event.id}>
                         <div style={MODAL_STYLE}>
                             <div>
-                                {children} 
+                                {children}
                             </div>
                             <h2 style={MODAL_TITLE}>{event.name}</h2>
-                            <div style={PARAGRAPH_STYLE}> 
-                                <p><FontAwesomeIcon icon={faThumbTack} style={PARAGRAPH_ICONS}/><strong>Local do Evento: {event.location ? event.location.name : 'Local não disponível'}</strong></p>
-                                <p><FontAwesomeIcon icon={faClock} style={PARAGRAPH_ICONS}/><strong>Data: </strong>{new Date(event.date).toLocaleDateString('pt-BR')}</p>
-                                <p><FontAwesomeIcon icon={faMusic} style={PARAGRAPH_ICONS}/><strong>Categoria: {event.category ? event.category.name : 'Categoria não disponível'}</strong></p>
-                            </div> 
-                            <button onClick={setModalOpen} style={BUTTON_STYLE}><FontAwesomeIcon icon={faXmark} style={ICON_STYLE}/></button>
+                            <div style={PARAGRAPH_STYLE}>
+                                <p><FontAwesomeIcon icon={faThumbTack} style={PARAGRAPH_ICONS} /><strong>Local do Evento: {event.location ? event.location.name : 'Local não disponível'}</strong></p>
+                                <p><FontAwesomeIcon icon={faClock} style={PARAGRAPH_ICONS} /><strong>Data: </strong>{new Date(event.date).toLocaleDateString('pt-BR')}</p>
+                                <p><FontAwesomeIcon icon={faMusic} style={PARAGRAPH_ICONS} /><strong>Categoria: {event.category ? event.category.name : 'Categoria não disponível'}</strong></p>
+                            </div>
+                            <button onClick={handleCloseModal} style={BUTTON_STYLE}><FontAwesomeIcon icon={faXmark} style={ICON_STYLE} /></button>
                         </div>
                     </div>
                 ))}

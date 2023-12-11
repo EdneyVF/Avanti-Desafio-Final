@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Components from "../../Components/LoginComponents/Components";
 import BackgroundVideo from "../../Components/LoginComponents/BackgroundVideo";
 import ServiceAuth from "../../service/ServiceAuth";
-import './styles.css';
+import "./Styles.css";
 
 function AuthParticipant() {
   const [signIn, toggle] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.add('AuthParticipant');
+  
+    return function cleanup() {
+      document.body.classList.remove('AuthParticipant');
+    };
+  }, []);
 
   const handleLogin = async () => {
     try {

@@ -1,4 +1,4 @@
-import InicialPage from "./Pages/Initial_Page/InicialPage"
+import InicialPage from "./Pages/InicialPage/InitialPage"
 import FilterComponent from "./Pages/ListEvent/ListEvent"
 import AuthAdmin from "./Pages/AuthAdmin/AuthAdmin"
 import AuthParticipant from "./Pages/AuthParticipant/AuthParticipant"

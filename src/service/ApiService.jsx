@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://25.66.173.124:3000' // <= mudar para localhost:3000
+  baseURL: 'http://localhost:3000' // <= mudar para localhost:3000
 });
 
 export const fetchEvents = async () => {
